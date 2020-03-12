@@ -2,17 +2,35 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-<bean id="restaurantBean" class="com.core.spring.Restaurent"></bean>
 
-<bean id="restaurantSetterBean" class="com.setter.injection.Restaurant">
-	<property name="welcomeMsg" value="Welcome to our restaurant!!"></property>
-</bean>
+	<!-- bean creation -->
+	<bean id="restaurantBean" class="com.core.spring.Restaurent"></bean>
 
-<bean id="restarantConstructorBean" class="com.constructor.injection.Restaurant">
-	<constructor-arg ref="lemonBean"/>
-</bean>
+	<!-- setter injection -->
+	<bean id="restaurantSetterBean" class="com.setter.injection.Restaurant">
+		<property name="welcomeMsg" value="Welcome to our restaurant!!"></property>
+	</bean>
 
-<bean id="teaBean" class="com.constructor.injection.Tea"></bean>
+	<!-- constructor injection -->
+	<bean id="restarantConstructorBean" class="com.constructor.injection.Restaurant">
+		<constructor-arg ref="lemonBean" />
+	</bean>
 
-<bean id="lemonBean" class="com.constructor.injection.LemonTea"></bean>
+	<bean id="teaBean" class="com.constructor.injection.Tea"></bean>
+
+	<bean id="lemonBean" class="com.constructor.injection.LemonTea"></bean>
+	
+	<!-- collections use in spring bean -->
+	<bean id="collectionsBean" class="com.collection.Restarant">
+		<property name="allEmpNames">
+			<list>
+				<value>Narendra</value>
+				<value>Phani</value>
+				<value>Srinu</value>
+				<value>Raghu</value>
+				<value>Chakri</value>
+			</list>
+		</property>
+	</bean>
+
 </beans>
