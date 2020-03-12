@@ -32,5 +32,9 @@
 			</list>
 		</property>
 	</bean>
-
+	
+	<!-- bean scope -->
+	<!-- <bean id="beanScopeBean" class="com.bean.scope.Restarant" scope="prototype"></bean> -->
+	
+	<bean id="beanScopeBean" class="com.bean.scope.Restarant" scope="singleton"></bean>
 </beans>
