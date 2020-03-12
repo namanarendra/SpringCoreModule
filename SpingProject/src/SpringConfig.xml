@@ -7,4 +7,12 @@
 <bean id="restaurantSetterBean" class="com.setter.injection.Restaurant">
 	<property name="welcomeMsg" value="Welcome to our restaurant!!"></property>
 </bean>
+
+<bean id="restarantConstructorBean" class="com.constructor.injection.Restaurant">
+	<constructor-arg ref="lemonBean"/>
+</bean>
+
+<bean id="teaBean" class="com.constructor.injection.Tea"></bean>
+
+<bean id="lemonBean" class="com.constructor.injection.LemonTea"></bean>
 </beans>
