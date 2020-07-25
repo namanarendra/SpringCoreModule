@@ -37,4 +37,17 @@
 	<!-- <bean id="beanScopeBean" class="com.bean.scope.Restarant" scope="prototype"></bean> -->
 	
 	<bean id="beanScopeBean" class="com.bean.scope.Restarant" scope="singleton"></bean>
+	
+	<!-- loading beans -->
+	<bean id="loadingBean" class="com.bean.loading.Restaruant" scope="singleton" lazy-init="false"></bean>
+	
+	<bean id="lifeCycleBean" class="com.bean.life.cycle.Restaruant" init-method="init" destroy-method="destory"></bean>
+	
+	
+	<!-- loading bean using annotation -->
+	<bean id="lifeCycleBeanUsingAnnotation" class="com.bean.life.cycle.AnnotationRestaruant"></bean>
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+	
+	<bean id="lifeCycleBeanUsingAnotherwayLifeCycleBean" class="com.bean.life.cycle.AnotherwayLifeCycleBean"></bean>
+	
 </beans>
